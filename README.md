@@ -3,6 +3,9 @@ A neo-brutalist personal portfolio built with vanilla HTML & CSS No frameworks, 
 
 This is a personal fun project, not a production template. The code prioritizes creativity and experimentation over best practices. It's a playground for trying out ideas, animations, and interactions - not a reference architecture.
 
+##LIVE WEBSITE 
+https://sreerag-coder.github.io/PORTFOLIO_UID/
+
 ## INTRODUCTION 
 This portfolio is a bold, high-energy digital showcase designed by Sreerag T C, a Computer Science and Engineering student. It serves as a professional hub that bridges the gap between technical engineering proficiency—spanning full-stack development, hardware innovation, and AI—and creative artistic passions like photography and editing. By moving away from conventional, minimalist design trends, this webpage establishes a unique digital identity that is as technically sound as it is visually striking.
 
