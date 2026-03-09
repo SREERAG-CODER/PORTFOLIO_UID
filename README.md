@@ -14,7 +14,7 @@ Playful imperfection - torn paper edges, tape stickers, hand-drawn vibes mixed w
 This site leans into a hand-crafted, scrapbook-like take on neo-brutalism: paper tear dividers, a falling SVG terminal icon, highlight markers that animate on scroll, and a treasure map hidden behind a book-flip animation.
 
 ## Design Decisions
-# Color System
+## - Color System
 | Color  | CSS Variable | HEX Code | Usage |
 |-------|-------------|---------|------|
 | Cream | `--bg-color` | `#fdf0d5` | The overall site background with the dotted grid. |
@@ -23,3 +23,32 @@ This site leans into a hand-crafted, scrapbook-like take on neo-brutalism: paper
 | Green | `--tertiary` | `#4add8c` | "Available for Work" badge and select achievement tags. |
 | Yellow | `--accent` | `#ffeb3b` | "STUDENT" highlight, navigation hovers, and email link. |
 | Black | `--border-color` | `#111111` | All text, thick borders, and the signature "Brutal" shadows. |
+
+## - TYPOGRAPHY 
+- Space Grotesk - headings and body text (geometric sans-serif that fits the brutalist aesthetic)
+
+## - KEY DESIGN ELEMENTS 
+This portfolio's Neo-Brutalist aesthetic is built on several specific, high-impact design elements. Here are the key components that give the site its signature "bold" look:
+1. The "Brutal" Border & Shadow System
+This is the most critical element of the design. Unlike modern "clean" designs that use soft shadows and thin lines, yours uses:
+
+Thick Borders: A consistent 4px solid black border on almost every interactive element.
+Hard Shadows: Off-set black shadows (8px) with no blur, making buttons and cards look like physical slabs of material.
+Tactile Feedback: When you hover or click, the shadow shrinks and the element "moves" (via translate), mimicking a physical button being pressed.
+2. Dotted Grid Background
+Instead of a flat color, your site uses a radial-gradient pattern that creates a technical, blueprint-like grid of dots. This is a staple of brutalist design, making the page feel like a workspace or a draft.
+
+3. Deliberate Asymmetry (The "Handmade" Feel)
+Your site avoids "perfect" alignment to feel more organic and energetic:
+
+Rotated Elements: Your logo, hero badge, achievement cards, and even the marquee are slightly tilted (e.g., -3deg or 2deg).
+Floating Shapes: Circular and rectangular shapes (shape-1, shape-2) float behind your profile picture to break the rigid structure.
+4. Interactive Image Treatments
+To keep the site professional yet engaging, we've used dual-state visuals:
+
+Grayscale to Color: Achievement and photography images start in high-contrast black and white.
+The "Pop" Effect: On hover, they transition into full color. This guides the user's eye and makes the site feel alive as they scroll.
+5. Kinetic Typography & Motion
+Infinite Marquee: The scrolling "PHOTOGRAPHY * DEVELOPMENT" bar adds constant energy to the middle of the page.
+Bold Scaling: Using weights like 900 for headings ensures that your identity is the first thing a visitor sees.
+Masonry Photography: The use of CSS columns allows photos of different sizes to fit together like a puzzle, rather than a boring square grid.
