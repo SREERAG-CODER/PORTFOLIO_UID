@@ -1,0 +1,712 @@
+:root {
+    --bg-color: #fdf0d5;
+    /* light cream/yellow */
+    --text-color: #111;
+    --primary: #ff4747;
+    /* bright red */
+    --secondary: #4775ff;
+    /* bright blue */
+    --tertiary: #4add8c;
+    /* bright green */
+    --accent: #ffeb3b;
+    /* yellow */
+    --border-width: 4px;
+    --border-color: #111;
+    --shadow-offset: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Creates a dotted grid background commonly used in Neo-Brutalism */
+    background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* --- Neo-Brutalism Utility Classes --- */
+.brutal-border {
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0;
+}
+
+.brutal-shadow {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-color);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.brutal-shadow:hover {
+    transform: translate(3px, 3px);
+    box-shadow: calc(var(--shadow-offset) - 3px) calc(var(--shadow-offset) - 3px) 0 var(--border-color);
+}
+
+.brutal-shadow:active {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0 0 0 var(--border-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header & Nav --- */
+header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: var(--border-width) solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.2rem 1rem;
+    transform: rotate(-3deg);
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+nav a:hover {
+    background-color: var(--accent);
+    border: 2px solid var(--border-color);
+    margin: -2px;
+    /* Prevent layout shift from border */
+    box-shadow: 3px 3px 0 var(--border-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 8rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: var(--tertiary);
+    padding: 0.4rem 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    transform: rotate(2deg);
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+}
+
+.highlight-text {
+    background-color: var(--accent);
+    padding: 0 0.5rem;
+    display: inline-block;
+    border: var(--border-width) solid var(--border-color);
+    transform: rotate(-1deg);
+    margin-top: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.hero-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero-tag:nth-child(even) {
+    background-color: var(--tertiary);
+    /* Alternate color for Brutalist effect */
+}
+
+.hero-tag:nth-child(3) {
+    background-color: var(--accent);
+}
+
+.hero-tag i {
+    font-size: 1.3rem;
+}
+
+.skills-card {
+    background-color: var(--secondary);
+    /* Blue background */
+    padding: 1.5rem;
+    margin-top: 2rem;
+    max-width: 500px;
+}
+
+.skills-title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.skills-pill-group {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    /* Thin border instead of full 4px for smaller pills */
+    border-width: 2px;
+}
+
+.skill-pill i {
+    font-size: 1.1rem;
+}
+
+.skill-pill:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.hero-visual {
+    position: relative;
+}
+
+.hero-image-container {
+    border-radius: 5rem;
+    background-color: #fff;
+    /* White background */
+    height: 450px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Border for the actual container */
+    border: var(--border-width) solid var(--border-color);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    /* Original color as requested */
+    filter: none;
+    mix-blend-mode: normal;
+    transition: all 0.3s ease;
+}
+
+
+/* Abstract shapes behind hero image */
+.shape-1 {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.shape-2 {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 200px;
+    height: 100px;
+    background-color: var(--tertiary);
+    z-index: 1;
+    transform: rotate(15deg);
+}
+
+/* --- Marquee --- */
+.marquee-wrapper {
+    background-color: var(--text-color);
+    color: var(--accent);
+    padding: 1.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: var(--border-width) solid var(--border-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    position: relative;
+    z-index: 10;
+    transform: rotate(-1deg);
+    margin: 2rem 0;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.marquee-content span {
+    margin: 0 2rem;
+}
+
+.marquee-content span::before {
+    content: '*';
+    margin-right: 2rem;
+    color: #fff;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Projects Section --- */
+.projects {
+    padding: 6rem 0;
+}
+
+.title-wrapper {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0.5rem 2rem;
+    transform: rotate(1deg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Alternate colors for cards */
+.card:nth-child(1) {
+    background-color: var(--accent);
+    transform: rotate(-1deg);
+}
+
+.card:nth-child(2) {
+    background-color: #fff;
+    transform: rotate(1deg);
+}
+
+.card:nth-child(3) {
+    background-color: var(--tertiary);
+    transform: rotate(-0.5deg);
+}
+
+.card-image {
+    width: 100%;
+    min-height: 280px;
+    background-color: #000;
+    border: var(--border-width) solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) contrast(120%);
+    mix-blend-mode: luminosity;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-image img {
+    filter: grayscale(0%) contrast(100%);
+    mix-blend-mode: normal;
+}
+
+.card-image span {
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.card h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.tag {
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 2px solid var(--border-color);
+}
+
+.card:nth-child(2) .tag {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* --- Testimonial / Quote --- */
+.quote-section {
+    padding: 6rem 0;
+    background-color: var(--secondary);
+    border-top: var(--border-width) solid var(--border-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    color: #fff;
+    text-align: center;
+}
+
+.quote-box {
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    transform: rotate(2deg);
+}
+
+.quote-box p {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.quote-author {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--primary);
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: var(--border-width) solid var(--border-color);
+    transform: rotate(-3deg);
+}
+
+/* --- Footer / Contact --- */
+.contact {
+    padding: 8rem 0 6rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.contact-box {
+    background-color: var(--primary);
+    padding: 4rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #fff;
+    transform: rotate(-1deg);
+}
+
+.contact-box p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.email-link {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-color);
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: rotate(2deg);
+}
+
+.email-link:hover {
+    background-color: #fff;
+}
+
+.social-links {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    background-color: var(--tertiary);
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    border-top: var(--border-width) solid var(--border-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+
+/* --- Photography / Editing Section --- */
+.photography-section {
+    padding: 3rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.photography-section:hover {
+    background-color: var(--accent);
+}
+
+.photo-intro {
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.photo-intro p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.photo-grid {
+    columns: 3;
+    column-gap: 1.5rem;
+}
+
+.photo-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    background-color: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    break-inside: avoid;
+    border: var(--border-width) solid var(--border-color);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%) contrast(120%);
+    transition: all 0.4s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.03) rotate(1.5deg);
+    z-index: 10;
+    box-shadow: 10px 10px 0 var(--border-color);
+}
+
+.photo-item:hover img {
+    filter: grayscale(0%) contrast(100%);
+}
+
+.photo-item:nth-child(even):hover {
+    transform: scale(1.03) rotate(-1.5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2rem 0;
+    }
+
+    .hero-visual {
+        order: 0;
+        /* Content first, then image */
+    }
+
+    .hero-image-container {
+        height: 320px;
+        /* Smaller image on mobile */
+        border-radius: 2rem;
+        /* Adjust brutal border radius for mobile */
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .quote-box p {
+        font-size: 1.4rem;
+        padding: 2rem 1rem;
+    }
+
+    nav ul {
+        display: none;
+        /* Hide on mobile for simplicity, could add a brutalist hamburger menu */
+    }
+
+    .contact-box p {
+        font-size: 1.2rem;
+    }
+
+    .email-link {
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    /* Photography Responsive Hooks */
+    .photo-grid {
+        columns: 1;
+        column-gap: 0;
+    }
+
+    .photo-item {
+        margin-bottom: 2rem;
+    }
+}
